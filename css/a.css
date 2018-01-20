@@ -1,0 +1,52 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+}
+a{
+  text-decoration: none;
+}
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.topNavBar{
+  padding: 20px 190px 12px 190px;
+}
+.topNavBar > .logo{
+  font-size: 30px;
+  font-family: "Hiragino Kaku Gothic Std";
+  font-weight: bold;
+}
+.topNavBar > .logo > .rs{
+  margin-right: 4px;
+  color: rgb(232, 103, 107);
+}
+.topNavBar > .logo > .card{
+  color: rgb(154,157,162);
+}
+.topNavBar nav ul{
+  margin: 0;
+  padding: 0;
+}
+.topNavBar > nav > ul > li {
+  float: left;
+  margin-left: 15px;
+  margin-right: 15px;
+  list-style: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+.topNavBar > nav > ul > li > a{
+  display: block;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+  padding-top: 12px;/*跟旁边的logo对齐*/
+  padding-bottom: 9px;
+  color: #b7b7b7;
+}
+.topNavBar > nav > ul > li > a:hover{
+  border-bottom: 3px solid rgb(232, 103, 107);
+}
