@@ -13,11 +13,11 @@ a{
   clear: both;
 }
 .topNavBar{
-  padding: 20px 190px 12px 190px;
+  padding: 20px 16px;
 }
 .topNavBar > .logo{
-  font-size: 30px;
-  font-family: "Hiragino Kaku Gothic Std";
+  font-size: 24px;
+  font-family: 'Arial Black';
   font-weight: bold;
 }
 .topNavBar > .logo > .rs{
