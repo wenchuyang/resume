@@ -11,76 +11,82 @@
 </head>
 
 <body>
-  <header class="topNavBar clearfix">
-    <a href="#" class="logo" style="float:left;">
-      <span class="rs">RS</span><span class="card">card</span>
-    </a>
-    <nav style="float:right;">
-      <ul class="clearfix">
-        <li>
-          <a href="#">关于</a>
-        </li>
-        <li>
-          <a href="#">技能</a>
-        </li>
-        <li>
-          <a href="#">作品</a>
-        </li>
-        <li>
-          <a href="#">博客</a>
-        </li>
-        <li>
-          <a href="#">日历</a>
-        </li>
-        <li>
-          <a href="#">联系方式</a>
-        </li>
-        <li>
-          <a href="#">其它</a>
-        </li>
-      </ul>
-    </nav>
+  <header class="topNavBar">
+    <div class="topNavBar-Inner clearfix">
+      <a href="#" class="logo" style="float:left;">
+        <span class="rs">RS</span>
+        <span class="card">card</span>
+      </a>
+      <nav style="float:right;">
+        <ul class="clearfix">
+          <li>
+            <a href="#">关于</a>
+          </li>
+          <li>
+            <a href="#">技能</a>
+          </li>
+          <li>
+            <a href="#">作品</a>
+          </li>
+          <li>
+            <a href="#">博客</a>
+          </li>
+          <li>
+            <a href="#">日历</a>
+          </li>
+          <li>
+            <a href="#">联系方式</a>
+          </li>
+          <li>
+            <a href="#">其它</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <div class="banner" style="background-image: url(#)"></div>
+  <div class="banner" style="">
+    <div class="mask"></div>
+  </div>
   <main>
-    <div class="card">
-      <div class="profile">
+    <div class="userCard">
+      <div class="profile clearfix">
         <div class="picture">
-          <img src="" alt="头像">
+          <img width="300px" height="350px" src="./img/avatar.jpg" alt="头像">
         </div>
         <div class="text">
-
-          <span class="welcome">Hello</span>
+          <span class="welcome">Hello
+            <span class="triangle"></span>
+          </span>
           <h1>文欢</h1>
-          <p>前端工程师</p>
+          <p>前端开发工程师</p>
           <hr>
-          <dl>
-            <dt>AGE</dt>
+          <dl class="clearfix">
+            <dt>年龄</dt>
             <dd>21</dd>
-            <dt>ADDRESS</dt>
+            <dt>所在城市</dt>
             <dd>河北廊坊</dd>
-            <dt>E-MAIL</dt>
+            <dt>邮箱</dt>
             <dd>writing_happy@163.com</dd>
-            <dt>PHONE</dt>
+            <dt>手机</dt>
             <dd>15075670870</dd>
           </dl>
         </div>
       </div>
       <footer class="media">
+          <a href="#">
+              <svg class="icon" aria-hidden="true">
+                  <use xlink:href="#icon-github"></use>
+              </svg>
+          </a>
         <a href="#">
-          <img src="" alt="...">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-twitter"></use>
+            </svg>
         </a>
         <a href="#">
-          <img src="" alt="...">
-        </a>
-        <a href="#">
-          <img src="" alt="...">
-        </a>
-        <a href="#">
-          <img src="" alt="...">
-        </a>
-        <a href="#">
-          <img src="" alt="...">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-weibo"></use>
+            </svg>
         </a>
       </footer>
     </div>
@@ -117,5 +123,5 @@
     </div>
   </section>
 </body>
-
+<script src="//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js"></script>
 </html>
