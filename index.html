@@ -7,28 +7,91 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>初阳的个人简历</title>
   <link rel="stylesheet" href="./css/a.css">
+  <style>
+    .welcomeLoading{
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 1;
+      justify-content: center;
+      align-items: center;
+    }
+    .welcomeLoading.active{
+      display: flex;
+    }
+    .loading {
+      width: 100px;
+      height: 100px;
+      position: relative;
+    }
+    .loading::before,
+    .loading::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background-color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spread 1.5s linear infinite;
+    }
+    .loading::after {
+      animation-delay: .75s;
+    }
+    @keyframes spread {
+      from {
+        width: 0%;
+        height: 0%;
+        opacity: 1;
+      }
+      to {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <header class="topNavBar">
+  <div id="welcomeLoading" class="welcomeLoading active">
+      <div class="loading"></div>
+  </div>
+  <header id="topNavBar" class="topNavBar">
     <div class="topNavBar-Inner clearfix">
       <a href="#" class="logo" style="float:left;">
         <span class="rs">RS</span>
         <span class="card">card</span>
       </a>
-      <nav style="float:right;">
+      <nav class="menu" style="float:right;">
         <ul class="clearfix">
           <li>
-            <a href="#">关于</a>
+            <a href="#siteAbout">关于</a>
           </li>
           <li>
-            <a href="#">技能</a>
+            <a href="#siteSkills">技能</a>
           </li>
           <li>
-            <a href="#">作品</a>
+            <a href="#siteWorks">作品</a>
+            <ul class="submenu">
+              <li>作品1</li>
+              <li>作品2</li>
+              <li>作品3</li>
+            </ul>
           </li>
           <li>
             <a href="#">博客</a>
+            <ul class="submenu">
+              <li>博客1</li>
+              <li>博客2</li>
+              <li>博客3</li>
+            </ul>
           </li>
           <li>
             <a href="#">日历</a>
@@ -43,11 +106,11 @@
       </nav>
     </div>
   </header>
-  <div class="banner" style="">
+  <div class="banner">
     <div class="mask"></div>
   </div>
   <main>
-    <div class="userCard">
+    <div class="userCard" id="siteAbout">
       <div class="profile clearfix">
         <div class="picture">
           <img width="300px" height="350px" src="./img/avatar.jpg" alt="头像">
@@ -97,7 +160,7 @@
       <br>
     </p>
   </main>
-  <section class="skills">
+  <section class="skills" id="siteSkills">
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
@@ -138,7 +201,7 @@
       </li>
     </ol>
   </section>
-  <section class="portfolio">
+  <section class="portfolio" id="siteWorks">
     <h2>作品集</h2>
     <nav>
       <ol class="clearfix">
@@ -175,5 +238,31 @@
   </section>
 </body>
 <script src="//at.alicdn.com/t/font_549469_os5bipbgiaz41jor.js"></script>
-
+<script>
+  welcomeLoading.classList.remove('active')
+  window.onscroll = function(x){
+    (window.scrollY > 0)?topNavBar.classList.add('sticky'):topNavBar.classList.remove('sticky')
+  }
+  let liTags = document.querySelectorAll('nav.menu > ul > li')
+  for(let i=0; i<liTags.length; i++){
+    liTags[i].onmouseenter = function(x){
+      let li = x.currentTarget
+      li.classList.add('active')
+    }
+    liTags[i].onmouseleave = function(x){
+      let li = x.currentTarget
+      li.classList.remove('active')
+    }
+  }
+  let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+  for(let i=0; i<aTags.length; i++){
+    aTags[i].onclick = function(x){
+      x.preventDefault()
+      let a = x.currentTarget
+      let href = a.getAttribute('href')
+      let element = document.querySelector(href) /*以这个字符串为选择器来获取元素*/
+      window.scrollTo(0, element.offsetTop-80)  
+    }
+  }
+</script>
 </html>

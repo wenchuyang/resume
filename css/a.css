@@ -34,8 +34,16 @@ a {
   left: 0;
   width: 100%;
   padding: 20px 0;
+  transition: all .5s;
+  color: #b7b7b7;
 }
-
+.topNavBar.sticky{
+  background-color: #fff;
+  padding: 10px 0;
+  z-index: 1;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,.4);
+  color: #3d4451;
+}
 .topNavBar>.topNavBar-Inner {
   padding: 0 16px;
 }
@@ -67,22 +75,66 @@ a {
   list-style: none;
   font-size: 13px;
   font-weight: bold;
+  position: relative;
 }
 
 .topNavBar nav>ul>li>a {
   display: block;
-  border-bottom: 3px solid transparent;
-  border-top: 3px solid transparent;
-  padding-top: 12px;
+  padding-top: 11px;
   /*跟旁边的logo对齐*/
   padding-bottom: 9px;
-  color: #b7b7b7;
+  margin-bottom: 3px;/*让那条横线显示出来*/ 
+  color: inherit;
+  position: relative;
 }
 
-.topNavBar nav>ul>li>a:hover {
-  border-bottom: 3px solid rgb(232, 103, 107);
+.topNavBar nav>ul>li.active>a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(232, 103, 107);
+  animation: leftToRight .3s;
 }
-
+@keyframes leftToRight{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 100%;
+  }
+}
+.topNavBar .submenu{
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  color: #3d4451;
+  padding: 5px 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  animation: submenuSlide .3s linear;
+}
+.topNavBar .submenu > li{
+  white-space: nowrap;
+  padding: 10px;
+}
+.topNavBar li.active .submenu{
+  display: block;
+}
+@keyframes submenuSlide{
+  0%{
+    margin-right: 100%;
+    opacity: 0;
+  }
+  100%{
+    margin-right: 0;
+    opacity: 1;
+  }
+}
 .banner {
   background-image: url(../img/rs-cover.jpg);
   height: 515px;
@@ -91,7 +143,7 @@ a {
 
 .banner>.mask {
   height: 515px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, .65);
 }
 
 body>main {
