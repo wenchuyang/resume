@@ -238,6 +238,7 @@
   </section>
 </body>
 <script src="//at.alicdn.com/t/font_549469_os5bipbgiaz41jor.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 <script>
   welcomeLoading.classList.remove('active')
   window.onscroll = function(x){
@@ -263,20 +264,23 @@
       
       let currentTop = window.scrollY
       let targetTop = top - 80
-      let time = 500
-      let n = 25
-      let duration = time/n
-      let distance = (targetTop - currentTop)/n
-      let i = 0
-      let id = setInterval(()=>{
-        if(i === n){
-          window.clearInterval(id)
-          return
-        }
-        i++
-        window.scrollTo(0, currentTop + i*distance)
-      },duration)
-      
+      let t = Math.abs((targetTop - currentTop)/100 * 250)
+      // Setup the animation loop.
+      function animate(time) {//告诉tween我们是间隔多少毫秒动一次，不需要自己手动指定。
+      //求间隔的API，根据显卡的不同而改变帧率
+        requestAnimationFrame(animate);
+        TWEEN.update(time);
+      }
+      requestAnimationFrame(animate);
+
+      var coords = { y: currentTop };
+      var tween = new TWEEN.Tween(coords)
+        .to({ y: targetTop }, t)
+        .easing(TWEEN.Easing.Quartic.Out)
+        .onUpdate(function () {
+          window.scrollTo(0, coords.y)
+        })
+        .start(); 
     }
   }
 </script>
