@@ -258,10 +258,25 @@
   for(let i=0; i<aTags.length; i++){
     aTags[i].onclick = function(x){
       x.preventDefault()
-      let a = x.currentTarget
-      let href = a.getAttribute('href')
-      let element = document.querySelector(href) /*以这个字符串为选择器来获取元素*/
-      window.scrollTo(0, element.offsetTop-80)  
+      let element = document.querySelector(x.currentTarget.getAttribute('href')) /*以这个字符串为选择器来获取元素*/
+      let top = element.offsetTop
+      
+      let currentTop = window.scrollY
+      let targetTop = top - 80
+      let time = 500
+      let n = 25
+      let duration = time/n
+      let distance = (targetTop - currentTop)/n
+      let i = 0
+      let id = setInterval(()=>{
+        if(i === n){
+          window.clearInterval(id)
+          return
+        }
+        i++
+        window.scrollTo(0, currentTop + i*distance)
+      },duration)
+      
     }
   }
 </script>
