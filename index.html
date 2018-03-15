@@ -110,7 +110,7 @@
     <div class="mask"></div>
   </div>
   <main>
-    <div data-x class="userCard" id="siteAbout">
+    <div data-x class="userCard offset" id="siteAbout">
       <div class="profile clearfix">
         <div class="picture">
           <img width="300px" height="350px" src="./img/avatar.jpg" alt="头像">
@@ -241,22 +241,35 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
 <script>
   welcomeLoading.classList.remove('active')
+  //添加offset类
   let specialTags = document.querySelectorAll('[data-x]')
-  let minIndex = 0
-  window.onscroll = function(x){
-    (window.scrollY > 0)?topNavBar.classList.add('sticky'):topNavBar.classList.remove('sticky')
-    for(let i=0; i<specialTags.length; i++){
-      if(Math.abs(specialTags[i].offsetTop-window.scrollY) < Math.abs(specialTags[minIndex].offsetTop-window.scrollY)){
-       minIndex = i
-      }    
+  for (let i = 0; i < specialTags.length; i++) {
+    specialTags[i].classList.add('offset')
+  }
+  
+  findClosest()
+  window.onscroll = function (x) {
+    (window.scrollY > 0) ? topNavBar.classList.add('sticky') : topNavBar.classList.remove('sticky')
+    findClosest()
+  }
+  function findClosest(){
+    let specialTags = document.querySelectorAll('[data-x]')
+    let minIndex = 0
+    for (let i = 0; i < specialTags.length; i++) {
+      if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+        minIndex = i
+      }
     }
+    //加slideUp动画效果
+    specialTags[minIndex].classList.remove('offset')
     //找到这个元素之后再通过id找到该元素对应的a标签
     let id = specialTags[minIndex].id
-    let a = document.querySelector('a[href="#' + id + '"]')
-    for(let i=0; i<aTags.length; i++){
-      aTags[i].parentNode.classList.remove('highLight')
+    let li = document.querySelector('a[href="#' + id + '"]').parentNode
+    let brotherAndMe = li.parentNode.children
+    for (let i = 0; i < brotherAndMe.length; i++) {
+      brotherAndMe[i].classList.remove('highLight')
     }
-    a.parentNode.classList.add('highLight')
+    li.classList.add('highLight')
   }
   let liTags = document.querySelectorAll('nav.menu > ul > li')
   for(let i=0; i<liTags.length; i++){

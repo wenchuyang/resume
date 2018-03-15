@@ -151,6 +151,14 @@ body>main {
   margin-top: -340px;
 }
 
+[data-x].offset{
+  transform: translateY(150px);
+}
+[data-x]{
+  transform: translateY(0);
+  transition: all 0.5s;  
+}
+
 .userCard {
   max-width: 940px;
   margin: 0 auto;
