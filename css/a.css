@@ -338,7 +338,7 @@ section.skills.offset .progress{
   transform: translateX(-100%);
 }
 section.portfolio {
-  max-width: 940px;
+  max-width: 760px;
   text-align: center;
   margin-bottom: 100px;
 }
@@ -391,18 +391,20 @@ section.portfolio nav .bar.state3 {
   width: 97px;
   margin-left: 138px;
 }
-section.portfolio .works{
-  position: relative;
+section.portfolio .swiper-button-next, 
+section.portfolio .swiper-button-prev{
+  background-color: white;
+  border-radius: 50%;
+  height: 64px;
+  width: 64px;
+  right: 100%;
+  left: auto;
 }
-section.portfolio .works .big{
-  position: absolute;
-  top: 0;
-  left: 0;
+section.portfolio .swiper-button-next{
+  right: auto;
+  left: 100%;
 }
-section.portfolio .works .small{
-  position: absolute;
-  left: 645px;
-}
-section.portfolio .works .small:nth-child(2){
-  top: 313px;
+section.portfolio .swiper-button-next:focus, 
+section.portfolio .swiper-button-prev:focus{
+  outline: none;
 }
