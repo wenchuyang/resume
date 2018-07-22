@@ -391,6 +391,10 @@ section.portfolio nav .bar.state3 {
   width: 97px;
   margin-left: 138px;
 }
+.swiper-container {
+  width: 668px;
+  height: 501px;
+}  
 section.portfolio .swiper-button-next, 
 section.portfolio .swiper-button-prev{
   background-color: white;
