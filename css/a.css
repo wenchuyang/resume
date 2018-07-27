@@ -2,14 +2,17 @@
   margin: 0;
   padding: 0;
 }
-
 ul, ol {
   list-style: none;
 }
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
+input{
+  border: none;
+}
+button:focus,input:focus{ outline: none; }
+button{ border: none; }
 
 body {
   margin: 0;
@@ -284,14 +287,16 @@ main .selfIntroduction {
   font-family: "华文楷体";
 }
 
-body>section.skills, section.portfolio {
+body>section.skills, section.portfolio, section.messages{
   margin-left: auto;
   margin-right: auto;
   max-width: 940px;
   margin-top: 75px;
 }
 
-body>section.skills>h2, section.portfolio>h2 {
+body>section.skills>h2,
+section.portfolio>h2,
+section.messages>h2 {
   color: rgb(61, 68, 81);
   font-size: 35px;
   font-weight: bold;
@@ -411,4 +416,50 @@ section.portfolio .swiper-button-next{
 section.portfolio .swiper-button-next:focus, 
 section.portfolio .swiper-button-prev:focus{
   outline: none;
+}
+
+section.messages > ol{
+  margin: 30px auto;
+  border-bottom: 1px solid #ddd;
+}
+section.messages > ol > li{
+  border-top: 1px solid #ddd;
+  padding: 16px;
+}
+section.messages > form{
+  margin: 30px 0;
+  margin-bottom: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+section.messages >form > input[name="content"],
+section.messages >form > input[name="name"]{
+  font-size: 18px;
+  height: 36px;
+  width: 600px;
+  line-height: 36px; 
+  padding: 0 10px;
+  border: 1px solid rgb(217, 224, 227);
+  border-radius: 3px;
+}
+section.messages >form > input[name="name"]{
+  width: 100px;
+}
+section.messages >form > input:focus{
+  border-color: rgb(105, 118, 124);
+}
+section.messages > form > button[type="submit"]{
+  font-size: 18px;
+  padding: 0 28px;
+  height: 36px;
+  line-height: 36px;
+  background-color: rgb(62, 185, 207);
+  color: #fff;
+  vertical-align: top;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all .3s;
+}
+section.messages > form > button[type="submit"]:hover{
+  background-color: rgb(44, 167, 189);
 }
