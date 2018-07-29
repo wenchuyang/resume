@@ -215,54 +215,7 @@
   <script src="./js/sticky-topbar.js"></script>
   <script src="./js/smoothly-navigation.js"></script>
   <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.9.0/dist/av-min.js"></script>
-  <script>
-    var APP_ID = 'YBcU89eJoAbIc67kLIVtVIUc-gzGzoHsz';
-    var APP_KEY = '12kXw2TCeiaLRGRAqPJKvXMF';
-
-    AV.init({
-      appId: APP_ID,
-      appKey: APP_KEY
-    });
-    function addMessage(name, content){
-      var a = AV.Object.extend('messages');
-      var b = new a();
-      b.save({
-        content: content,
-        name: name
-      }).then(function(object) {
-        alert('留言成功')
-        addLiTag(name,content)
-      })
-    }
-    function addLiTag(name,content){
-      let li = document.createElement('li')
-      li.innerText = `${name}：${content}`
-      messageList.appendChild(li)
-    }
-    function getMessage(){
-      var query = new AV.Query('messages');
-      query.find().then(function (messages) {
-        let array = messages.map((messages) => messages.attributes)
-        array.forEach(function(message) {
-          addLiTag(message.name, message.content)
-        });
-        return AV.Object.saveAll(messages);
-      }).then(function(messages) {
-        // 更新成功
-      }, function (error) {
-        // 异常处理
-      });
-    }
-    getMessage()
-    let myForm = document.querySelector('#postMessageForm')
-    myForm.addEventListener('submit', function(e){
-      e.preventDefault()
-      let content = myForm.querySelector('input[name=content]').value
-      let name = myForm.querySelector('input[name=name]').value
-      addMessage(name, content)
-      myForm.querySelector('input[name=content]').value = ''
-    })
-  </script>
+  <script src="./js/message.js"></script>
   <script>
     welcomeLoading.classList.remove('active')
   </script>
