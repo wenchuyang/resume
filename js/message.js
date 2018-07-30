@@ -56,8 +56,14 @@
     saveMessage: function(){
       let content = this.myForm.querySelector('input[name=content]').value
       let name = this.myForm.querySelector('input[name=name]').value
-      this.addMessage(name, content)
-      this.myForm.querySelector('input[name=content]').value = ''
+      if(name === ''){
+        alert('请填写您的姓名')
+      }else if(content === ''){
+        alert('您忘记了填写留言内容哦')
+      }else{
+        this.addMessage(name, content)
+        this.myForm.querySelector('input[name=content]').value = ''
+      }
     },
     init: function(view){
       this.view = view
