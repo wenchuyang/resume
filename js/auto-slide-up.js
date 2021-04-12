@@ -1,15 +1,10 @@
+/* 滚动到对应位置的时候修改 nav 里边的 highlight */
+/** data-x, id 与 <a href="x"> 对应 */
 !function(){
-  //添加offset类
-  let specialTags = document.querySelectorAll('[data-x]')
-  for (let i = 0; i < specialTags.length; i++) {
-    specialTags[i].classList.add('offset')
-  }
-
   findClosestAndRemoveOffset()
   window.addEventListener('scroll', function(x){
     findClosestAndRemoveOffset()
   })
-
   function findClosestAndRemoveOffset() {
     let specialTags = document.querySelectorAll('[data-x]')
     let minIndex = 0
@@ -18,9 +13,6 @@
         minIndex = i
       }
     }
-    //加slideUp动画效果
-    specialTags[minIndex].classList.remove('offset')
-    //找到这个元素之后再通过id找到该元素对应的a标签
     let id = specialTags[minIndex].id
     let li = document.querySelector('a[href="#' + id + '"]').parentNode
     let brotherAndMe = li.parentNode.children

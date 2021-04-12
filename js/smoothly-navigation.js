@@ -1,3 +1,4 @@
+/** 点击 nav 的时候页面滚动到相应位置 */
 !function () {
   var view = View('nav.menu')
   var controller = {
@@ -27,8 +28,9 @@
     scrollToElement: function(element){
       let top = element.offsetTop
       let currentTop = window.scrollY
-      let targetTop = top - 80
-      let t = Math.abs((targetTop - currentTop) / 100 * 250)
+      let offset = window.innerWidth>768?20:76
+      let targetTop = top - offset
+      let t = Math.abs((targetTop - currentTop) / 100 * 180)
       // Setup the animation loop.
       var coords = { y: currentTop };
       var tween = new TWEEN.Tween(coords)
@@ -43,6 +45,7 @@
       for (let i = 0; i < this.aTags.length; i++) {
         this.aTags[i].onclick = function(x) {
           x.preventDefault()
+          View("#showNav").click()
           let element = document.querySelector(x.currentTarget.getAttribute('href')) /*以这个字符串为选择器来获取元素*/
           this.scrollToElement(element)
         }.bind(this)  //this的绑定，不然就直接用箭头函数取消掉里边一层的this

@@ -11,6 +11,7 @@ window.Model = function(options){
     },
     fetch: function(){
       var query = new AV.Query(resourceName)
+      query.limit(4);
       return query.find()
     },
     save: function(obj){

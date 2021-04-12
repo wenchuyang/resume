@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 ul, ol {
   list-style: none;
@@ -31,7 +32,7 @@ a {
   clear: both;
 }
 
-.topNavBar {
+.navBar {
   position: fixed;
   top: 0;
   left: 0;
@@ -40,38 +41,30 @@ a {
   transition: all .5s;
   color: #b7b7b7;
 }
-.topNavBar.sticky{
+.navBar.sticky{
   background-color: #fff;
   padding: 10px 0;
   z-index: 1;
   box-shadow: 0px 0px 20px 0px rgba(0,0,0,.4);
   color: #3d4451;
 }
-.topNavBar>.topNavBar-Inner {
+.navBar>.navBar-Inner {
   padding: 0 16px;
 }
 
-.topNavBar .logo {
+.navBar .logo {
   font-size: 24px;
   font-family: 'Arial Black';
   font-weight: bold;
+  color: #9ede73;
 }
 
-.topNavBar .logo>.rs {
-  margin-right: 4px;
-  color: rgb(232, 103, 107);
-}
-
-.topNavBar .logo>.card {
-  color: rgb(154, 157, 162);
-}
-
-.topNavBar nav ul {
+.navBar nav ul {
   margin: 0;
   padding: 0;
 }
 
-.topNavBar nav>ul>li {
+.navBar nav>ul>li {
   float: left;
   margin-left: 15px;
   margin-right: 15px;
@@ -81,7 +74,7 @@ a {
   position: relative;
 }
 
-.topNavBar nav>ul>li>a {
+.navBar nav>ul>li>a {
   display: block;
   padding-top: 11px;
   /*跟旁边的logo对齐*/
@@ -91,8 +84,8 @@ a {
   position: relative;
 }
 
-.topNavBar nav>ul>li.active>a::after,
-.topNavBar nav>ul>li.highLight>a::after {
+.navBar nav>ul>li.active>a::after,
+.navBar nav>ul>li.highLight>a::after {
   content: '';
   display: block;
   position: absolute;
@@ -100,7 +93,7 @@ a {
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: rgb(232, 103, 107);
+  background-color: #e48900;
   animation: leftToRight .3s;
 }
 @keyframes leftToRight{
@@ -111,7 +104,7 @@ a {
     width: 100%;
   }
 }
-.topNavBar .submenu{
+.navBar .submenu{
   display: none;
   position: absolute;
   top: 100%;
@@ -122,11 +115,11 @@ a {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   animation: submenuSlide .3s linear;
 }
-.topNavBar .submenu > li{
+.navBar .submenu > li{
   white-space: nowrap;
   padding: 10px;
 }
-.topNavBar li.active .submenu{
+.navBar li.active .submenu{
   display: block;
 }
 @keyframes submenuSlide{

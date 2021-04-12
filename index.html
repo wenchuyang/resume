@@ -6,221 +6,391 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>初阳的个人简历</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
-  <link rel="stylesheet" href="./css/a.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/menu-button.css">
   <style>
-    .welcomeLoading{ display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #fff; z-index: 1; justify-content: center; align-items: center; }
-    .welcomeLoading.active{ display: flex; }
-    .loading { width: 100px; height: 100px; position: relative; }
-    .loading::before,.loading::after { content: ''; width: 0; height: 0; border-radius: 50%; background-color: black; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: spread 1.5s linear infinite; }
-    .loading::after { animation-delay: .75s; }
-    @keyframes spread { from { width: 0%; height: 0%; opacity: 1; } to{ width: 100%; height: 100%; opacity: 0; } }
+    .welcomeLoading {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 1;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .welcomeLoading.active {
+      display: flex;
+    }
+
+    .loading {
+      width: 100px;
+      height: 100px;
+      position: relative;
+    }
+
+    .loading::before,
+    .loading::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background-color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spread 1.5s linear infinite;
+    }
+
+    .loading::after {
+      animation-delay: .75s;
+    }
+
+    @keyframes spread {
+      from {
+        width: 0%;
+        height: 0%;
+        opacity: 1;
+      }
+
+      to {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div id="welcomeLoading" class="welcomeLoading active">
-      <div class="loading"></div>
+    <div class="loading"></div>
   </div>
-  <header id="topNavBar" class="topNavBar">
-    <div class="topNavBar-Inner clearfix">
-      <a href="#" class="logo" style="float:left;">
-        <span class="rs">RS</span>
-        <span class="card">card</span>
+  <header class="topNavBar" id="topNavBar">
+    <a href="#" class="logo">
+      Wency's Resume
+    </a>
+    <div class="menu-btn" id="showNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+  <div class="wrapper">
+    <aside id="navBar" class="navBar por">
+      <a href="#" class="logo">
+        Wency's Resume
       </a>
-      <nav class="menu" style="float:right;">
-        <ul class="clearfix">
+      <nav class="menu">
+        <ul>
           <li>
-            <a href="#siteAbout">关于</a>
+            <a href="#siteAbout">关于我&emsp;<small class="eng-small">About Me</small></a>
           </li>
           <li>
-            <a href="#siteSkills">技能</a>
+            <a href="#siteSkills">技能&emsp;<small class="eng-small">Skills</small></a>
           </li>
           <li>
-            <a href="#siteWorks">作品</a>
-            <ul class="submenu">
-              <li>作品1</li>
-              <li>作品2</li>
-              <li>作品3</li>
-            </ul>
+            <a href="#siteWorks">作品集&emsp;<small class="eng-small">Portfolio</small></a>
           </li>
           <li>
-            <a href="#">博客</a>
-            <ul class="submenu">
-              <li>博客1</li>
-              <li>博客2</li>
-              <li>博客3</li>
-            </ul>
+            <a href="#siteExperience">工作经历&emsp;<small class="eng-small">Work Experience</small></a>
           </li>
           <li>
-            <a href="#siteMessages">留言</a>
-          </li>
-          <li>
-            <a href="#">联系方式</a>
-          </li>
-          <li>
-            <a href="#">其它</a>
+            <a href="#siteContact">联系我&emsp;<small class="eng-small">Contact Me</small></a>
           </li>
         </ul>
       </nav>
-    </div>
-  </header>
-  <div class="banner">
-    <div class="mask"></div>
+      <div class="footer">
+        <div class="link">
+          <a target="_blank" href="https://wenchuyang.github.io/">
+            <svg class="icon hexo" aria-hidden="true">
+              <use xlink:href="#icon-hexo"></use>
+            </svg>
+          </a>
+          <a target="_blank" href="https://blog.csdn.net/writing_happy">
+            <svg class="icon csdn" aria-hidden="true">
+              <use xlink:href="#icon-csdn"></use>
+            </svg>
+          </a>
+          <a target="_blank" href="https://github.com/wenchuyang">
+            <svg class="icon github" aria-hidden="true">
+              <use xlink:href="#icon-github"></use>
+            </svg>
+          </a>
+        </div>
+        <p>
+          Open source: <a href="https://github.com/wenchuyang/Resume">Github</a>
+        </p>
+      </div>
+    </aside>
+    <main class="main">
+      <section data-x class="about" id="siteAbout">
+        <div class="banner"></div>
+        <div class="userCard">
+          <div class="photo">
+          </div>
+          <div class="info">
+            <a href="mailto:wenchuyang@foxmail.com" class="welcome">Hire me
+              <span class="triangle"></span>
+            </a>
+            <h1>初阳
+              <small>意向职位：前端开发工程师</small>
+            </h1>
+            <p class="desc">
+              女，25岁，本科，华北科技学院，软件工程专业，两年前端开发经验
+            </p>
+          </div>
+        </div>
+        <div class="about-inner clearfix">
+          <div class="left">
+            <p class="introduction">
+              自学 react，移动端两年开发经验，熟悉 Ionic、Angular、TypeScript、SCSS，了解 Android native 开发。
+            </p>
+            <p class="introduction">
+              写文档、写注释、写干净的代码，致力于让一切东西条理化。
+              热爱编程，乐于学习新的技术。
+            </p>
+          </div>
+          <div class="right">
+            <div title="Hexo 博客">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-hexo"></use>
+              </svg>
+              <a target="_blank" href="https://wenchuyang.github.io/">https://wenchuyang.github.io/</a>
+            </div>
+            <div title="CSDN 博客">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-csdn"></use>
+              </svg>
+              <a target="_blank" href="https://blog.csdn.net/writing_happy">https://blog.csdn.net/writing_happy</a>
+            </div>
+            <div title="Github">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-github"></use>
+              </svg>
+              <a target="_blank" href="https://github.com/wenchuyang">https://github.com/wenchuyang</a>
+            </div>
+          </div>
+        </div>
+        <div class="downloadResume-wrapper">
+          <a class="downloadResume" href="./resume.pdf" download>下载PDF简历</a>
+        </div>
+      </section>
+      <section data-x class="skills" id="siteSkills">
+        <h2 class="header">技能</h2>
+        <div class="skillsList clearfix">
+          <ol>
+            <li><strong>React</strong>&emsp;理解 react 思想，熟悉 <span class="emphasize">react</span>、<span
+                class="emphasize">redux</span>、<span class="emphasize">react-router</span>，能够使用 <span
+                class="emphasize">Hooks</span>、<span class="emphasize">Context</span> 进行 react 开发，了解 <span
+                class="emphasize">css-in-js</span> 的样式方案，能够使用 <span class="emphasize">styled-component</span> 。</li>
+            <li><strong>TypeScript</strong>&emsp;熟练使用 TypeScript 进行开发，了解静态类型检查。</li>
+            <li><strong>SCSS</strong>&emsp;了解 @mixin、@include、@function 等的使用，熟练使用变量和嵌套，能够根据不同的问题去查询不同的解决方案。</li>
+            <li><strong>移动端</strong>&emsp;熟悉基于 <span class="emphasize">Angular</span> 的 <span
+                class="emphasize">Ionic</span> 使用、环境配置、打包等；熟悉 Android APP 创建、打包等系列流程，了解 <span class="emphasize">Android
+                native</span> 开发。</li>
+            <li><strong>Bootstrap</strong>&emsp;初步了解 Bootstrap，能够使用 Bootstrap 快速制作页面。</li>
+            <li><strong>jQuery</strong>&emsp;能够使用 jQuery 进行 DOM 操作，实现 <a
+                href="https://wenchuyang.github.io/simple-projects/swiper/appleStyle.html">精美轮播图</a> 。</li>
+            <li><strong>Node.js</strong>&emsp;简单了解 node.js，可以使用 nodejs 搭建简单后台，根据浏览器发送的不同请求路径给出不同的响应。</li>
+          </ol>
+          <ol>
+            <li><strong>HTTP</strong>&emsp;了解 <span class="emphasize">http 协议</span>，能够看懂 <span class="emphasize">http
+                请求和响应</span>，了解常见状态码含义。</li>
+            <li><strong>HTML5 & CSS3</strong>&emsp;可以根据 HTML5 标准编写<span class="emphasize">语义化</span>的文档结构，掌握 <span
+                class="emphasize">CSS 选择器</span>、<span class="emphasize">常见样式</span>、<span
+                class="emphasize">堆叠上下文</span>、<span class="emphasize">常用居中方案</span>以及<span
+                class="emphasize">常见布局</span>（float 布局和 flex 布局），能使用纯 CSS 实现一些简单有趣的效果比如 <a
+                href="https://wenchuyang.github.io/simple-projects/cssImage/taiji.html">旋转的太极图</a> 。</li>
+            <li><strong>原生 JavaScript</strong>&emsp;了解 js 数据在内存中的存储方式，熟悉 DOM 常用 API、JS 数组以及数组的一些常用方法，掌握<span
+                class="emphasize">事件的捕获与冒泡</span>，了解 js 的<span class="emphasize">变量提升</span>机制，知道 js <span
+                class="emphasize">闭包</span>、<span class="emphasize">浏览器的同源策略和跨域方法</span>、<span
+                class="emphasize">JSONP</span>、<span class="emphasize">AJAX</span>、<span
+                class="emphasize">原型链</span>、<span class="emphasize">继承</span>、<span class="emphasize">new</span> 和
+              <span class="emphasize">this</span> 相关知识，理解 MVC 思想并能在实际中运用。</li>
+            <li><strong>响应式</strong>&emsp;可以根据 <span class="emphasize">viewport</span>，<span
+                class="emphasize">媒体查询</span>以及<span class="emphasize">动态 rem</span> 制作响应式页面。</li>
+            <li><strong>前端构建工具</strong>&emsp;了解 <span class="emphasize">webpack</span>、<span
+                class="emphasize">babel</span> 的使用。</li>
+            <li><strong>CET-4</strong>&emsp;熟练阅读英文文档。</li>
+          </ol>
+        </div>
+      </section>
+      <section data-x class="portfolio" id="siteWorks">
+        <h2 class="header">作品集</h2>
+        <ol>
+          <li class="totoro-wrapper">
+            <div class="totoro">
+              <img src="./works/totoro.png" alt="totoro" srcset="">
+            </div>
+            <div class="totoro-content">
+              <header class="title">
+                <b>画一只龙猫</b>
+                <span>CSS</span>
+              </header>
+              <main class="content">
+                该项目使用 <span class="emphasize">jQuery</span> 和 <span class="emphasize">CSS</span> 实现，展示了<span
+                  class="important">动态画一只龙猫</span>的过程，并<span class="important">添加了调速按钮</span>。用 css 画出来之后，将代码剪切到 js
+                中去，然后由 js 将代码放到页面的 style 标签里，从而将过程展现出来。
+              </main>
+              <footer class="footer">
+                <div>CSS, JavaScript</div>
+                <div>
+                  <a href="https://github.com/wenchuyang/simple-projects/tree/master/css-picture-animation/totoro"
+                    class="btn">Github</a>
+                  <a href="https://wenchuyang.github.io/simple-projects/css-picture-animation/totoro/" class="btn">View
+                    it</a>
+                </div>
+              </footer>
+            </div>
+          </li>
+          <li>
+            <header class="title">
+              <b>做一个导航</b>
+              <span>JavaScript</span>
+            </header>
+            <main class="content">
+              <img src="./works/mynav.png" alt="mynav" srcset="">
+              <div class="desc">
+                该项目使用 <span class="emphasize">原生JS</span> 实现，实现了 <span class="important">搜索（包括百度搜索和 Google 搜索）</span> 和
+                <span class="important">网页导航</span> 功能。使用 <span class="emphasize">新建 form</span> 的形式发送 GET 请求实现搜索功能；使用
+                <span class="emphasize">localStorage</span> 存储虚拟按键对应的网址；监听键盘事件打开网址。
+              </div>
+            </main>
+            <footer class="footer">
+              <div>JavaScript</div>
+              <div>
+                <a href="https://github.com/wenchuyang/myNav" class="btn">Github</a>
+                <a href="https://wenchuyang.github.io/myNav/src/" class="btn">View it</a>
+              </div>
+            </footer>
+          </li>
+          <li>
+            <header class="title">
+              <b>我的色卡</b>
+              <span>React</span>
+            </header>
+            <main class="content">
+              <img src="./works/colorful.png" alt="colorful" srcset="">
+              <div class="desc">
+                该项目使用 <span class="emphasize">React</span> 实现，是一个可以 <span class="important">点击切换颜色</span>、<span
+                  class="important">添加颜色</span>的在线色卡。在 react 的基础上，使用 <span class="emphasize">styled-components</span>
+                插件进行样式的书写，使用 <span class="emphasize">useState</span> 在函数组件中使用 state，使用 <span
+                  class="emphasize">Context</span> 进行全局样式的传递和修改，使用 <span class="emphasize">localStorage</span>
+                进行色卡的持久化存储。
+              </div>
+            </main>
+            <footer class="footer">
+              <div>React、styled-components、Hooks、Context</div>
+              <div>
+                <a href="https://github.com/wenchuyang/colorful" class="btn">Github</a>
+                <a href="https://wenchuyang.github.io/colorful/build/index.html" class="btn">View it</a>
+              </div>
+            </footer>
+          </li>
+        </ol>
+      </section>
+      <section data-x class="workExperience" id="siteExperience">
+        <h2 class="header">工作经历</h2>
+        <h3 class="tac">2018/09-2020/10&emsp;&emsp;杭州声德科技有限公司</h3>
+        <ol>
+          <li>
+            <header class="title">
+              <b>Retail</b>
+              <span>Ionic3</span>
+            </header>
+            <main class="content">
+              <p>
+                <b>软件描述</b>：商店综合管理系统，<span class="emphasize">Ionic3</span> 项目。已在 PAXSTORE 上发布。该项目中我负责 <span
+                  class="important">前端和权限控制</span> 部分。
+              </p>
+              <p>
+                <b>主要功能</b>：商店员工上下班打卡、商品进销存管理、会员信息管理等
+              </p>
+              <p>
+                <b>技术细节</b>：使用 <span class="emphasize">CSS 的变量</span> 实现 <span class="important">主题颜色的动态切换</span> 以及
+                <span class="important">自定义主题颜色</span> ；使用 <span class="emphasize">SCSS</span> 的 @mixin, @include 和
+                @content 统一 <span class="emphasize">媒体查询</span> ，做 <span class="important">多屏兼容</span> ；在用户登录的时候从 SQLite
+                数据库中获取权限并将所有权限整合到一起，放在 localStorage 里边，根据权限判断菜单的显示与隐藏、display 与 disable。
+              </p>
+            </main>
+            <footer class="footer">
+              Ionic3、Angular4、SCSS、TypeScript、多屏兼容
+            </footer>
+          </li>
+          <li>
+            <header class="title">
+              <b>IMPrint</b>
+              <span>Android</span>
+            </header>
+            <main class="content">
+              <p>
+                <b>软件描述</b>：查询店铺订单并打印。原生 <span class="emphasize">Android</span> 项目，运行在 pax 系列机器上，已在 PAXSTORE 发布。该项目
+                <span class="important">主要由我负责</span> 。
+              </p>
+              <p>
+                <b>主要功能</b>：软件激活、订单查询、订单列表展示、订单信息查看并打印。
+              </p>
+              <p>
+                <b>技术细节</b>：
+                使用 <span class="emphasize">BoradcastReceiver</span> <span
+                  class="important">接收广播</span>，获取激活数据，读取激活信息并写入文件；使用 <span class="emphasize">OKHttp</span> 发送 <span
+                  class="important">POST 请求</span> 进行订单查询获取数据；使用 <span class="emphasize">Adapter</span> 将数据放到 <span
+                  class="emphasize">ListView</span> 上，<span class="important">展示订单列表</span>；使用 <span
+                  class="emphasize">intent</span> 进行 <span class="important">页面的跳转</span> 和页面间的 <span
+                  class="important">信息传递</span> ；使用 <span class="emphasize">drawable</span> 绘制 <span
+                  class="important">按钮样式</span> ；使用 <span class="emphasize">BindView</span> <span
+                  class="important">获取元素</span> 并绑定监听事件；使用 <span class="emphasize">Bitmap</span> 将订单信息 <span
+                  class="important">生成图片</span> ，调用打印接口进行订单信息打印。
+              </p>
+            </main>
+            <footer class="footer">
+              Java、XML
+            </footer>
+          </li>
+        </ol>
+      </section>
+      <section data-x class="contact" id="siteContact">
+        <h2 class="header">联系我</h2>
+        <div class="contactWay">
+          <div class="contactWay-inner">
+            <div>
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-email"></use>
+              </svg>
+              <a class="grey" href="mailto:wenchuyang@foxmail.com">wenchuyang@foxmail.com</a>
+            </div>
+            <div>
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-wechat"></use>
+              </svg>
+              <span>writing_happy(注明"工作")</span>
+            </div>
+            <div>
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-phone"></use>
+              </svg>
+              <span>atob("MTUwNzU2OTA4NzA=")(base64 解码)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
-  <main>
-    <div data-x class="userCard offset" id="siteAbout">
-      <div class="profile clearfix">
-        <div class="picture">
-          <img width="300px" height="350px" src="./img/avatar.jpg" alt="头像">
-        </div>
-        <div class="text">
-          <span class="welcome">Hello
-            <span class="triangle"></span>
-          </span>
-          <h1>文欢</h1>
-          <p>前端开发工程师</p>
-          <hr>
-          <dl class="clearfix">
-            <dt>年龄</dt>
-            <dd>21</dd>
-            <dt>所在城市</dt>
-            <dd>河北廊坊</dd>
-            <dt>邮箱</dt>
-            <dd>writing_happy@163.com</dd>
-            <dt>手机</dt>
-            <dd>15075670870</dd>
-          </dl>
-        </div>
-      </div>
-      <footer class="media">
-        <a href="#">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-github"></use>
-          </svg>
-        </a>
-        <a href="#">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-twitter1"></use>
-          </svg>
-        </a>
-        <a href="#">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-weibo1"></use>
-          </svg>
-        </a>
-      </footer>
-    </div>
-    <p class="downloadResume-wrapper">
-      <a class="downloadResume" href="./resume.pdf" download>下载PDF简历</a>
-    </p>
-    <p class="selfIntroduction">
-      文欢，前端开发工程师。目前坐标杭州西湖区。
-      <br>
-    </p>
-  </main>
-  <section data-x class="skills offset" id="siteSkills">
-    <h2>技能</h2>
-    <ol class="clearfix">
-      <li>
-        <h3>HTML5 &amp; CSS3</h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 75%;"></div>
-        </div>
-      </li>
-      <li>
-        <h3>JavaScript</h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 58%;"></div>
-        </div>
-      </li>
-      <li>
-        <h3>jQuery</h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 20%;"></div>
-        </div>
-      </li>
-      <li>
-        <h3>Vue</h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 15%;"></div>
-        </div>
-      </li>
-      <li>
-        <h3>React</h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 60%;"></div>
-        </div>
-      </li>
-      <li>
-        <h3>HTTP</h3>
-        <div class="progressBar">
-          <div class="progress" style="width: 25%;"></div>
-        </div>
-      </li>
-    </ol>
-  </section>
-  <section data-x class="portfolio" id="siteWorks">
-    <h2>作品集</h2>
-    <nav>
-      <ol class="clearfix">
-        <li id="portfolio1">所有</li>
-        <li id="portfolio2">框架</li>
-        <li id="portfolio3">原生JS&amp;CSS</li>
-      </ol>
-      <div id="portfolioBar" class="bar state1">
-        <div class="bar-inner"></div>
-      </div>
-      <script>
-        portfolio1.onclick = function(){
-          portfolioBar.className = "bar state1";
-        }
-        portfolio2.onclick = function(){
-          portfolioBar.className = "bar state2";
-        }
-        portfolio3.onclick = function(){
-          portfolioBar.className = "bar state3";
-        }
-      </script>
-    </nav>
-    <div id="mySlides" style="position: relative;">
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <img src="./works/nav-page.png" alt="" class="swiper-slide">
-          <img src="./works/canvas.png" alt="" class="swiper-slide">
-          <img src="./works/apple-style-slides.png" alt="" class="swiper-slide">
-        </div>
-        <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
-      </div>
-      <!-- 如果需要导航按钮 -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-  </section>
-  <section data-x class="messages" id="siteMessages">
-    <h2>留言板</h2>
-    <ol id="messageList"></ol>
-    <form action="" method="post" id="postMessageForm">
-      <input type="text" name="name" id="" placeholder="姓名">
-      <input name="content" id="" placeholder="请在此输入留言内容">
-      <button type="submit">提交</button>
-    </form>
-  </section>
-  <script src="//at.alicdn.com/t/font_549469_os5bipbgiaz41jor.js"></script>
+  <script src="//at.alicdn.com/t/font_549469_rtcmqwdcks.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
   <script src="./js/base/View.js"></script>
-  <script src="./js/base/Model.js"></script>
   <script src="./js/base/Controller.js"></script>
   <script src="./js/auto-slide-up.js"></script>
-  <script src="./js/init-swiper.js"></script>
-  <script src="./js/sticky-topbar.js"></script>
   <script src="./js/smoothly-navigation.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.9.0/dist/av-min.js"></script>
-  <script src="./js/message.js"></script>
+  <script src="./js/sticky-topbar.js"></script>
+  <script src="./js/show-nav.js"></script>
   <script>
-    welcomeLoading.classList.remove('active')
+    welcomeLoading.classList.remove('active');
   </script>
 </body>
 
