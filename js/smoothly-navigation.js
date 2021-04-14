@@ -30,7 +30,7 @@
       let currentTop = window.scrollY
       let offset = window.innerWidth>768?20:76
       let targetTop = top - offset
-      let t = Math.abs((targetTop - currentTop) / 100 * 180)
+      let t = Math.abs((targetTop - currentTop) / 100 * 80)
       // Setup the animation loop.
       var coords = { y: currentTop };
       var tween = new TWEEN.Tween(coords)
